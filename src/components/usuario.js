@@ -10,7 +10,9 @@ export default function Usuario(props) {
         src={foto}
         alt=""
         onClick={() => {
-          setFoto(prompt("Digite o endereço da foto (URL)"));
+          const fotoPromp = prompt("Digite o endereço da foto (URL)")
+          if(fotoPromp == "" || fotoPromp == undefined || fotoPromp == null) return
+          setFoto(fotoPromp);
         }}
       />
       <div>
@@ -20,7 +22,9 @@ export default function Usuario(props) {
           <ion-icon
             name="pencil-outline"
             onClick={() => {
-              setNome(prompt("Digite seu nome"));
+              const nomePromp = prompt("Digite seu nome");
+              if(nomePromp === "" || nomePromp === undefined || nomePromp === null) return
+              setNome(nomePromp);
             }}
           ></ion-icon>
         </p>
